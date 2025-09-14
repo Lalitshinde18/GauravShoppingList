@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🛍️ Aniruddha Shopee</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🛒 Gaurav Shopping List</h1>
+    <p>Estimate Product List</p>
+    <button id="darkToggle">🌙 Dark Mode</button>
+
+  </header>
+  <!-- Navbar (वेगळा ठेवला header खाली) -->
+<!-- <nav class="navbar">
+  <div class="nav-left">
+    <span class="logo">🛍️ Aniruddha Shopee</span>
+  </div>
+  <div class="nav-right">
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">History</a>
+    <a href="#">Contact</a>
+   
+    
+  </div>
+</nav>  -->
+
+
+  <main>
+    <!-- Left Side -->
+    <section class="left">
+      <div class="search">
+        <input type="text" id="searchBox" placeholder="🔍 Search product...">
+      </div>
+
+      <div class="add-form">
+        <h2>➕ Add New Product</h2>
+        <input type="text" id="newName" placeholder="Product Name">
+        <input type="number" id="newQty" placeholder="Quantity">
+        <input type="number" id="newPrice" placeholder="Price/Unit">
+        <button onclick="addProduct()">Add Product</button>
+      </div>
+
+      <div class="products" id="productList"></div>
+    </section>
+
+    <!-- Right Side Cart -->
+    <aside class="right">
+      <h2>🛒 Added Products</h2>
+      <ul id="cartList"></ul>
+      <footer id="totalAmount">Total: ₹0</footer>
+      <button class="pdf-btn" onclick="generatePDF()">⬇️ Download PDF</button>
+      <button class="pdf-btn" onclick="sendWhatsApp()">📲 Send on WhatsApp</button>
+    </aside>
+  </main>
+
+  <!-- jsPDF + AutoTable -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
