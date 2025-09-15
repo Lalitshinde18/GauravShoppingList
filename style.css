@@ -272,4 +272,18 @@ body.dark .card,
 body.dark .add-form, 
 body.dark .right { background: #222; color: #ddd; }
 body.dark .search input { background: #333; color: #fff; border: 1px solid #555; }
-body.dark #cartList li { background: #333; }
+body.dark #cartList li { background: #333; } 
+
+
+
+/* Footer Style */
+.site-footer {
+  border-top: 1px solid #333;   /* वरची लाईन */
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background-color: #1b1b46;    /* गडद बॅकग्राऊंड */
+  color: #ccc;
+}
