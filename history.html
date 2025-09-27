@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🛍️ Cart History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="logo">🛍️ Aniruddha Shopee</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="history.html">History</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2>🛒 Cart History</h2>
+    <ul id="historyList"></ul>
+    <footer id="totalAmount">Total: ₹0</footer>
+  </main>
+
+  <script>
+    // Get cart from localStorage
+    let historyCart = JSON.parse(localStorage.getItem("cartHistory")) || [];
+    let historyList = document.getElementById("historyList");
+    let total = 0;
+
+    if(historyCart.length === 0){
+      historyList.innerHTML = "<li>No items in history</li>";
+    }
+
+    historyCart.forEach((item, i)=>{
+      total += item.amount;
+      historyList.innerHTML += `
+        <li>
+          ${i+1}. ${item.name} - Qty: ${item.qty} × ₹${item.price} = ₹${item.amount}
+        </li>
+      `;
+    });
+
+    document.getElementById("totalAmount").innerText = `Total: ₹${total}`;
+  </script>
+</body>
+</html>
