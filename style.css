@@ -2,7 +2,7 @@
 * {margin:0; padding:0; box-sizing:border-box;}
 body {
   font-family: 'Poppins', sans-serif;;
-  background: linear-gradient(90deg,#30496B,#30B8D2);
+background: linear-gradient(90deg,#30496B,#30B8D2);
   color: #333;
   transition: background 0.3s, color 0.3s;
 }
@@ -21,7 +21,7 @@ header p { font-size: 14px; }
 #darkToggle {
   position: center;
   right: 15px;
-  top: 15px;
+  top: 16px;
   padding: 6px 12px;
   background: #fff;
   border: none;
@@ -124,6 +124,7 @@ main {
   margin: 10px 0;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   animation: fadeIn 0.5s ease;
+
 }
 .add-form input {
   width: 100%;
@@ -150,6 +151,11 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
   gap: 15px;
+
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  
 }
 .card {
   background: white;
@@ -214,6 +220,7 @@ main {
   list-style: none;
   max-height: 300px;
   overflow-y: auto;
+  
 }
 #cartList li {
   margin-bottom: 8px;
@@ -286,4 +293,141 @@ body.dark #cartList li { background: #333; }
   font-size: 14px;
   background-color: #1b1b46;    /* गडद बॅकग्राऊंड */
   color: #ccc;
+  position: relative;
+}
+
+
+
+
+/* history page  */
+/* Reset */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(90deg,#30496B,#30B8D2);
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4147bb;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-right a:hover {
+  color: #4e54c8;
+}
+
+/* Main content */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* History list */
+#historyList {
+  list-style: none;
+  margin-top: 15px;
+}
+
+#historyList li {
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  animation: fadeInLeft 0.4s ease;
+}
+
+/* Total amount footer */
+#totalAmount {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: right;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from{opacity:0; transform: translateX(-20px);} 
+  to{opacity:1; transform: translateX(0);}
+}
+
+/* Dark Mode */
+body.dark {
+  background: #181818;
+  color: #f1f1f1;
+}
+
+body.dark main {
+  background: #222;
+  color: #ddd;
+}
+
+body.dark #historyList li {
+  background: #333;
+}
+
+
+
+
+/* Contact Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+form input, form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+form textarea {
+  resize: none;
+  min-height: 80px;
+}
+form button {
+  background: #4e54c8;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+form button:hover {
+  background: #2b59c3;
 }
